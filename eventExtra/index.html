@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .campo{
+            background: #ddd;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+        .erro{
+            background: red;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+
+    </style>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(()=>{
+            $('#btn2').on('click', ()=>{
+                alert('btn 2 clicado')
+            })
+
+            $('#btn1').on('click',()=>{
+                $('#btn2').trigger('click')
+            })
+
+            $('#btn1').hover(e=>{
+                $(e.target).toggleClass('campo')
+            })
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <button type="button" id="btn1">Btn 1</button>
+    <button type="button" id="btn2">Btn 2</button>
+
+
+
+</body>
+</html>

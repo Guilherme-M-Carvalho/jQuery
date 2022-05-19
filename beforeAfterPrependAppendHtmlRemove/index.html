@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(()=>{
+
+            $('#lista1').prepend('<li>item 0</li>');
+            
+            $('#lista1').append('<li>item 4</li>');
+            
+            $('#lista2').before('<hr>');
+            
+            $('#lista2').after('<hr>');
+            
+            $('#lista2').html('<p>Subistituiu tudo</p>');
+
+            $('.item2').remove();
+
+        })
+
+    </script>
+
+</head>
+<body>
+
+<ul id="lista1">
+    <li><a href="#">Item 1</a></li>
+    <li class="item2"><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+</ul>
+
+<div id="lista2">
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+</div>
+
+</body>
+</html>

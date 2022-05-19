@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .campo{
+            background: #ddd;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+        .erro{
+            background: red;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+
+        }
+
+    </style>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(()=>{
+
+            console.log($('#topo').css('background', "blue").css('margin', '20px'))
+            console.log($('#topo').css({'background':"red", 'padding': '40px'}))
+            $('input').addClass('campo')
+            $('textarea').addClass('campo erro')
+            console.log($('textarea').hasClass('erro'))
+            $('textarea').removeClass('erro')
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <div  id="topo">
+        <h1>Barra de navegaçao da aplicaçao</h1>
+    </div>
+
+    <div>
+        <h3>Contato</h3>
+        <hr>
+
+        <p>Nome:</p>
+        <input type="text" />
+
+        <p>Email:</p>
+        <input type="text">
+        <br />
+
+        <p>Mensagem:</p>
+        <textarea cols="30" rows="10">
+        </textarea>
+
+        <br />
+
+        <button type="button">Enviar</button>
+    </div>
+
+
+
+</body>
+</html>

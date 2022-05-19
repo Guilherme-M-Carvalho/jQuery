@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        
+        $(document).ready(()=>{
+            $('#onload').html('Pagina carregada')
+
+            $(window).scroll(() =>{
+                $('#scroll').html('Scroll acionado')
+            })
+
+            $(window).resize(()=>{
+                $('#resize').html('Pagina redmensionada').css({'color':'red','font-size':'20px'})
+            })
+
+            $('#btn1').mousedown(e =>{
+                $(e.target).css('background','red')
+            })
+            $('#btn1').mouseup(e =>{
+                $(e.target).css('border','4px solid blue')
+            })
+            
+            $('#btn1').click(e =>{
+                $(e.target).css('border','4px solid yellow')
+            })
+
+            $('#btn1').dblclick(e=>{
+                $(e.target).hide()
+            })
+
+            $('#btn2').dblclick(e =>{
+                $(e.target).css('border','4px solid yellow')      
+            })
+
+            $('#div2').mousemove(e=>{
+                $(e.target).html(e.offsetX)
+            })
+
+            
+            $('#div3').mouseout(e=>{
+                $('#msgE').html('Saiu')
+            })
+            $('#div3').mouseover(e=>{
+                $('#msgE').html('Entrou')
+            })
+
+
+            /*EVENTOS ATUAIS SEM FAZER MSM AÇAO VARIAS VEZES*/
+            $('#interna').mouseenter(e=>{
+                $('#msgI').html('Entrou 2')
+            })
+            $('#interna').mouseleave(e=>{
+                $('#msgI').html('Saiu 2')
+            })
+
+            $('#Teclado').keydown(()=>{
+                $('#ResulTeclado').html('tecla pressionada')
+            })
+            
+            $('#Teclado').keyup(e=>{
+                console.log(e.keyCode)
+                if(e.keyCode == 13){
+                    $('#ResulTeclado').html(e.target.value)
+                    $(e.target).val('')
+                }
+            })
+
+            $('#nome').focus(()=>{
+                console.log('Recebeu o focus')
+            })
+            
+            $('#nome').blur(()=>{
+                console.log('Perdeu o focus')
+            })
+
+            $('#itemSele').change((e)=>{
+                console.log($(e.target).val())
+            })
+
+            $('#form').submit((e)=>{
+                e.preventDefault()
+                console.log('Formulario enviado')
+            })
+
+            $('a').click((e)=>{
+                e.preventDefault()
+            })
+
+
+        })
+
+
+    </script>
+
+</head>
+<body>
+
+    <h1>Eventos</h1>
+
+    <h3>Browser</h3>
+
+    <span >Onload</span>
+    <span id="onload">?</span>
+    <br>
+    <span>Scroll</span>
+    <span id="scroll">?</span>
+    <br>
+    <span>Window</span>
+    <span id="resize">?</span>
+    <br>
+
+    <hr/>
+    <h3>Mouse</h3>
+    <button type="button" id="btn1">Clique aqui</button>
+    <button type="button" id="btn2">Clique aqui 2x</button>
+
+    <div id="div2" style="background: red;width: 100px;height:100px; margin-top:10px;">
+
+    </div>
+    
+    <p>Resultado do evento sobre a div</p>
+    <div id="div3" style="padding: 20px;background: #DDD;width: 100px;height:100px; margin-top:10px;">
+        <div id="interna" style="background: blue;width:100%;height:100%;">
+
+        </div>
+    </div>
+    <span id="msgE">Div Externa</span><br/>
+    <span id="msgI">Div interna</span>
+    
+    <hr/>
+    <h3>Teclado</h3>
+    <label for="Teclado">Nome:</label>
+    <input id="Teclado" type="text">
+    <span id="ResulTeclado">Resultado do evento sobre o input</span>
+    
+    <hr/>
+
+    <h3>Formulario</h3>
+    <form id="form">
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text">
+    <label for="email">E-mail:</label>
+    <input id="email" type="email">
+    <span id="resul">Motivo do contato</span>
+    <br/>
+    <select name="" id="itemSele">
+        <option value="0">Selecione</option>
+        <option value="1">Item 1</option>
+        <option value="2">Item 2</option>
+        <option value="3">Item 3</option>
+    </select>
+    <button type="submit">Enviar</button>
+    </form>
+    <a href="www.google.com.br">google</a>
+</body>
+</html>

@@ -8,31 +8,6 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>	
 	</head>
 
-	<script>
-		$(document).ready(()=>{
-			$('button').on('click', e=>{
-				e.preventDefault();
-
-				let dados = $('form').serialize();
-				console.log(dados)
-				$.ajax({
-					type: "POST",
-					url: 'app.php',
-					data: dados,
-					dataType: 'json',
-					success: (resposta)=>{
-						console.log(resposta)
-					},
-					error: (erro) =>{
-						console.log(erro)
-					}
-				})
-			});
-
-		});	
-
-	</script>
-
 	<body>
 
 		<div class="container mt-5">
@@ -65,10 +40,10 @@
 						
 						<div class="form-group">
 							<div class="form-check form-check-inline">
-								<input type="checkbox" name="interesses[]" value="php" class="form-check-input"><label class="form-check-label mr-3">PHP</label>
-								<input type="checkbox" name="interesses[]" value="js" class="form-check-input"><label class="form-check-label mr-3">JavaScript</label>
-								<input type="checkbox" name="interesses[]" value="NodeJS" class="form-check-input"><label class="form-check-label mr-3">NodeJS</label>
-								<input type="checkbox" name="interesses[]" value="MongoDB" class="form-check-input"><label class="form-check-label mr-3">MongoDB</label>
+								<input type="checkbox" name="interesses" value="php" class="form-check-input"><label class="form-check-label mr-3">PHP</label>
+								<input type="checkbox" name="interesses" value="js" class="form-check-input"><label class="form-check-label mr-3">JavaScript</label>
+								<input type="checkbox" name="interesses" value="NodeJS" class="form-check-input"><label class="form-check-label mr-3">NodeJS</label>
+								<input type="checkbox" name="interesses" value="MongoDB" class="form-check-input"><label class="form-check-label mr-3">MongoDB</label>
 							</div>
 						</div>
 						
